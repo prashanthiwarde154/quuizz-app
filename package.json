@@ -1,7 +1,7 @@
 {
   "name": "quizz",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server/index.js"
@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Quiz app with Node.js, Express, and Socket.IO",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
@@ -17,5 +17,8 @@
     "openai": "^5.11.0",
     "socket.io": "^4.8.1",
     "uuid": "^11.1.0"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
