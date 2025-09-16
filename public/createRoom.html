@@ -84,11 +84,11 @@
   <button id="startButton" style="display:none">🚀 Start Game</button>
 
   <script>
-    const socket = io("http://localhost:5000");
+    const socket = io();
 
     async function createRoom() {
       try {
-        const response = await fetch('http://localhost:5000/api/create-room', {
+        const response = await fetch('/api/create-room', {
           method: 'POST',
         });
 
