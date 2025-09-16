@@ -37,21 +37,7 @@ const questionsByCategory = {
     options: ["Long-term storage", "Display", "Short-term memory", "Power supply"],
     answer: "Short-term memory",
   },
-  {
-    question: "Which of these is an example of an output device?",
-    options: ["Keyboard", "Mouse", "Monitor", "Scanner"],
-    answer: "Monitor",
-  },
-  {
-    question: "What type of computer memory is non-volatile?",
-    options: ["RAM", "ROM", "Cache", "Registers"],
-    answer: "ROM",
-  },
-  {
-    question: "Which protocol is used to transfer web pages?",
-    options: ["HTTP", "FTP", "SMTP", "IP"],
-    answer: "HTTP",
-  },
+  
  
 ],
 "General Knowledge": [
@@ -65,21 +51,7 @@ const questionsByCategory = {
       options: ["Rahul Gandhi", "Narendra Modi", "Amit Shah", "Manmohan Singh"],
       answer: "Narendra Modi",
     },
-    {
-      question: "Which planet is known as the Red Planet?",
-      options: ["Mars", "Venus", "Jupiter", "Saturn"],
-      answer: "Mars",
-    },
-    {
-      question: "What is the largest ocean in the world?",
-      options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
-      answer: "Pacific Ocean",
-    },
-    {
-      question: "Who wrote the national anthem of India?",
-      options: ["Rabindranath Tagore", "Bankim Chandra Chattopadhyay", "Sarojini Naidu", "Subhas Chandra Bose"],
-      answer: "Rabindranath Tagore",
-    },
+   
     
 ],
 "DSA": [
@@ -93,21 +65,7 @@ const questionsByCategory = {
     options: ["Stack", "Queue", "Heap", "Graph"],
     answer: "Stack",
   },
-  {
-    question: "Which algorithm is used for sorting in O(n log n) time on average?",
-    options: ["Bubble Sort", "Quick Sort", "Insertion Sort", "Selection Sort"],
-    answer: "Quick Sort",
-  },
-  {
-    question: "What is the time complexity of binary search in a sorted array?",
-    options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
-    answer: "O(log n)",
-  },
-  {
-    question: "Which data structure is used for implementing recursion?",
-    options: ["Queue", "Stack", "Heap", "Array"],
-    answer: "Stack",
-  },
+  
 ],"Output Prediction": [
   {
     question: "What will be the output of: console.log(2 + '2');",
@@ -119,21 +77,7 @@ const questionsByCategory = {
     options: ["null", "object", "undefined", "string"],
     answer: "object",
   },
-  {
-    question: "What will be the output of: console.log(0 == '0');",
-    options: ["true", "false", "Error", "undefined"],
-    answer: "true",
-  },
-  {
-    question: "What will be the output of: console.log(0 === '0');",
-    options: ["true", "false", "Error", "undefined"],
-    answer: "false",
-  },
-  {
-    question: "What will be the output of: console.log(1 + true);",
-    options: ["2", "true1", "Error", "undefined"],
-    answer: "2",
-  },
+  
 ],
 "Syntactical Error": [
   {
@@ -146,21 +90,7 @@ const questionsByCategory = {
     options: ["Use of '=' instead of '==' or '==='", "Missing parenthesis", "Extra semicolon", "Invalid variable name"],
     answer: "Use of '=' instead of '==' or '==='",
   },
-  {
-    question: "Find the syntax error: let 2name = 'John';",
-    options: ["Variable name cannot start with number", "Missing semicolon", "Extra quote", "Invalid keyword"],
-    answer: "Variable name cannot start with number",
-  },
-  {
-    question: "Find the syntax error: function myFunc( { console.log('Hi'); }",
-    options: ["Missing function name", "Missing closing parenthesis", "Extra curly brace", "Incorrect keyword"],
-    answer: "Missing closing parenthesis",
-  },
-  {
-    question: "Find the syntax error: const name = 'Alex'",
-    options: ["Missing semicolon", "Extra bracket", "Missing equal sign", "Extra quote"],
-    answer: "Missing semicolon",
-  },
+  
 ],
 "Basic Programming": [
   {
@@ -173,21 +103,7 @@ const questionsByCategory = {
     options: ["function", "def", "fun", "define"],
     answer: "def",
   },
-  {
-    question: "Which of the following is used to print output in Java?",
-    options: ["console.log()", "printf()", "print()", "System.out.println()"],
-    answer: "System.out.println()",
-  },
-  {
-    question: "What is the correct way to start a comment in C++?",
-    options: ["// comment", "# comment", "<!-- comment -->", "-- comment"],
-    answer: "// comment",
-  },
-  {
-    question: "Which operator is used for assignment in most programming languages?",
-    options: ["=", "==", "===", "->"],
-    answer: "=",
-  },
+  
 ],
 
 
@@ -294,7 +210,7 @@ io.on('connection', (socket) => {
             } else {
               sendFinalResults(roomCode, categoryName);
             }
-          }, 20000);
+          }, 30000);
         }
       } else {
         sendFinalResults(roomCode, categoryName);
@@ -422,7 +338,11 @@ function getWinner(scoreObj) {
   else return "Draw";
 }
 
-const PORT = 5000;
+// const PORT = 5000;
+// server.listen(PORT, () => {
+//   console.log(`🚀 Server running at http://localhost:${PORT}`);
+// });
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
